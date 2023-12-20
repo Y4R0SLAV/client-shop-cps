@@ -1,8 +1,19 @@
 import { useSelector } from "react-redux";
-import { selectProducts } from "../../redux/reducers/products";
+import { selectProductsType } from "../../redux/reducers/products";
+import { Typography } from "antd";
+import { ProductsList } from "./productslist/ProductsList";
+const { Title } = Typography;
 
 export const Catalog = () => {
-  const products = useSelector(selectProducts);
+  const productsType = useSelector(selectProductsType);
 
-  return <div>Catalog</div>;
+  return (
+    <div>
+      <Title level={3} style={{ textAlign: "center" }}>
+        {" "}
+        {productsType}{" "}
+      </Title>
+      <ProductsList />
+    </div>
+  );
 };

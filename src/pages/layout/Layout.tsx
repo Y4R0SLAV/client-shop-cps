@@ -1,4 +1,4 @@
-import { Layout as AntdLayout } from "antd";
+import { Flex, Layout as AntdLayout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import React from "react";
 import { FooterContent } from "./footercontent/FooterContent";
@@ -26,9 +26,10 @@ export const Layout: React.FC<{
           alignItems: "center",
           color: "#020202",
           backgroundColor: "white",
+          padding: "0 48px",
         }}
       >
-        {children}
+        <Flex justify="center">{children}</Flex>
       </Content>
 
       <Footer
