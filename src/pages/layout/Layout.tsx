@@ -11,6 +11,10 @@ export const Layout: React.FC<{
     <AntdLayout>
       <Header
         style={{
+          height: "90px",
+          position: "sticky",
+          top: 0,
+          zIndex: 1,
           display: "flex",
           alignItems: "center",
           color: "#020202",
