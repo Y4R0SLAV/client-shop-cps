@@ -1,15 +1,25 @@
-import { Footer } from "./footer/Footer";
-import { Header } from "./header/Header";
 import { Layout as AntdLayout } from "antd";
-import { Content } from "antd/es/layout/layout";
+import { Content, Footer, Header } from "antd/es/layout/layout";
 import React from "react";
+import { FooterContent } from "./footercontent/FooterContent";
+import { HeaderContent } from "./headercontent/HeaderContent";
 
 export const Layout: React.FC<{
   children: React.ReactNode | Array<React.ReactNode>;
 }> = ({ children }) => {
   return (
     <AntdLayout>
-      <Header />
+      <Header
+        style={{
+          display: "flex",
+          alignItems: "center",
+          color: "#020202",
+          backgroundColor: "white",
+        }}
+      >
+        <HeaderContent />
+      </Header>
+
       <Content
         style={{
           margin: "0 16px",
@@ -20,7 +30,16 @@ export const Layout: React.FC<{
       >
         {children}
       </Content>
-      <Footer />
+
+      <Footer
+        style={{
+          textAlign: "center",
+          color: "#e9fffa",
+          backgroundColor: "#111",
+        }}
+      >
+        <FooterContent />
+      </Footer>
     </AntdLayout>
   );
 };
